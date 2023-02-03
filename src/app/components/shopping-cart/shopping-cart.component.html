@@ -7,7 +7,7 @@
           {{item.startDate | date}}
           <div  class="offset-md-2" >Cantidad de entradas: <input type="number" name="quantity" min="1" max="5" ngModel="item.qty"  (click)="chngQuantity()"></div>
         </div>
-        <button (click)="removeProduct(item)">Eliminar</button>
+        <button (click)="removeProduct(item)" class="mt-2"><img src="/assets/images/trash.png"  alt="eliminar" style="height: 30px;"></button>
       </li>
     </ol>
   </div>
