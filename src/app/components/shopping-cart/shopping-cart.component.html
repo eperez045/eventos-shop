@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <div class="cart-item" *ngFor="let item of items">
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">{{ item.title }}</div>
+          {{item.startDate | date}}
+          <div  class="offset-md-2" >Cantidad de entradas: <input type="number" name="quantity" min="1" max="5" ngModel="item.qty"  (click)="chngQuantity()"></div>
+        </div>
+        <button (click)="removeProduct(item)">Eliminar</button>
+      </li>
+    </ol>
+  </div>
+  <div *ngIf="items.length > 0" class="m-4"> 
+    <button class="btn btn-outline-success" (click)="alertWithSuccess()">Comprar</button>
+  </div> 
+  <div *ngIf="items.length == 0" class="row"> 
+    <div class="fw-bold"> Tu carrito esta vacio</div>
+  </div> 
+
+</div>
